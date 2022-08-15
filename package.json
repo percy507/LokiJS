@@ -1,6 +1,6 @@
 {
   "name": "@percy507/lokijs",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "A fork of LokiJS project. Fast document oriented javascript in-memory database",
   "homepage": "https://percy507-lokijs.vercel.app",
   "main": "src/lokijs.js",
