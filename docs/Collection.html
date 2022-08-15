@@ -606,6 +606,45 @@
 
         <tr>
             
+                <td class="name"><code>disableFreeze</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last"><p>when false all docs are frozen</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>cloneMethod</code></td>
             
 
@@ -767,7 +806,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4654">line 4654</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4951">line 4951</a>
     </li></ul></dd>
     
 
@@ -784,6 +823,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1115,7 +1156,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5459">line 5459</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5791">line 5791</a>
     </li></ul></dd>
     
 
@@ -1125,6 +1166,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1166,7 +1209,11 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var pview = users.addDynamicView('progeny');pview.applyFind({'age': {'$lte': 40}});pview.applySimpleSort('name');var results = pview.data();</code></pre>
+    <pre class="prettyprint"><code>var pview = users.addDynamicView('progeny');
+pview.applyFind({'age': {'$lte': 40}});
+pview.applySimpleSort('name');
+
+var results = pview.data();</code></pre>
 
 
 
@@ -1300,7 +1347,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5014">line 5014</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5323">line 5323</a>
     </li></ul></dd>
     
 
@@ -1327,9 +1374,20 @@
 
 
 
+
+
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>users.addTransform('progeny', [  {    type: 'find',    value: {      'age': {'$lte': 40}    }  }]);var results = users.chain('progeny').data();</code></pre>
+    <pre class="prettyprint"><code>users.addTransform('progeny', [
+  {
+    type: 'find',
+    value: {
+      'age': {'$lte': 40}
+    }
+  }
+]);
+
+var results = users.chain('progeny').data();</code></pre>
 
 
 
@@ -1440,7 +1498,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6972">line 6972</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7379">line 7379</a>
     </li></ul></dd>
     
 
@@ -1450,6 +1508,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1620,7 +1680,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6615">line 6615</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7019">line 7019</a>
     </li></ul></dd>
     
 
@@ -1630,6 +1690,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1824,7 +1886,7 @@ on a collection.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6664">line 6664</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7068">line 7068</a>
     </li></ul></dd>
     
 
@@ -1834,6 +1896,8 @@ on a collection.</p>
 
     
 </dl>
+
+
 
 
 
@@ -2140,7 +2204,7 @@ on a collection.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5217">line 5217</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5526">line 5526</a>
     </li></ul></dd>
     
 
@@ -2150,6 +2214,8 @@ on a collection.</p>
 
     
 </dl>
+
+
 
 
 
@@ -2191,7 +2257,13 @@ on a collection.</p>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// check all indices on a collection, returns array of invalid index namesvar result = coll.checkAllIndexes({ repair: true, randomSampling: true, randomSamplingFactor: 0.15 });if (result.length > 0) {  results.forEach(function(name) {     console.log('problem encountered with index : ' + name);   });}     </code></pre>
+    <pre class="prettyprint"><code>// check all indices on a collection, returns array of invalid index names
+var result = coll.checkAllIndexes({ repair: true, randomSampling: true, randomSamplingFactor: 0.15 });
+if (result.length > 0) {
+  results.forEach(function(name) {
+    console.log('problem encountered with index : ' + name);
+  });
+}</code></pre>
 
 
 
@@ -2492,7 +2564,7 @@ on a collection.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5256">line 5256</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5565">line 5565</a>
     </li></ul></dd>
     
 
@@ -2502,6 +2574,8 @@ on a collection.</p>
 
     
 </dl>
+
+
 
 
 
@@ -2543,7 +2617,18 @@ on a collection.</p>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// full testvar valid = coll.checkIndex('name');// full test with repair (if issues found)valid = coll.checkIndex('name', { repair: true });// random sampling (default is 10% of total document count)valid = coll.checkIndex('name', { randomSampling: true });// random sampling (sample 20% of total document count)valid = coll.checkIndex('name', { randomSampling: true, randomSamplingFactor: 0.20 });// random sampling (implied boolean)valid = coll.checkIndex('name', { randomSamplingFactor: 0.20 });// random sampling with repair (if issues found)valid = coll.checkIndex('name', { repair: true, randomSampling: true });</code></pre>
+    <pre class="prettyprint"><code>// full test
+var valid = coll.checkIndex('name');
+// full test with repair (if issues found)
+valid = coll.checkIndex('name', { repair: true });
+// random sampling (default is 10% of total document count)
+valid = coll.checkIndex('name', { randomSampling: true });
+// random sampling (sample 20% of total document count)
+valid = coll.checkIndex('name', { randomSampling: true, randomSamplingFactor: 0.20 });
+// random sampling (implied boolean)
+valid = coll.checkIndex('name', { randomSamplingFactor: 0.20 });
+// random sampling with repair (if issues found)
+valid = coll.checkIndex('name', { repair: true, randomSampling: true });</code></pre>
 
 
 
@@ -2735,7 +2820,7 @@ on a collection.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5629">line 5629</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5989">line 5989</a>
     </li></ul></dd>
     
 
@@ -2745,6 +2830,8 @@ on a collection.</p>
 
     
 </dl>
+
+
 
 
 
@@ -2894,7 +2981,7 @@ then create a message to be inserted in the commitlog</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6851">line 6851</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7258">line 7258</a>
     </li></ul></dd>
     
 
@@ -2904,6 +2991,8 @@ then create a message to be inserted in the commitlog</p>
 
     
 </dl>
+
+
 
 
 
@@ -3029,7 +3118,7 @@ then create a message to be inserted in the commitlog</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5128">line 5128</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5437">line 5437</a>
     </li></ul></dd>
     
 
@@ -3039,6 +3128,8 @@ then create a message to be inserted in the commitlog</p>
 
     
 </dl>
+
+
 
 
 
@@ -3176,7 +3267,7 @@ then create a message to be inserted in the commitlog</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5412">line 5412</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5740">line 5740</a>
     </li></ul></dd>
     
 
@@ -3186,6 +3277,8 @@ then create a message to be inserted in the commitlog</p>
 
     
 </dl>
+
+
 
 
 
@@ -3333,7 +3426,7 @@ then create a message to be inserted in the commitlog</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5377">line 5377</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5705">line 5705</a>
     </li></ul></dd>
     
 
@@ -3343,6 +3436,8 @@ then create a message to be inserted in the commitlog</p>
 
     
 </dl>
+
+
 
 
 
@@ -3511,7 +3606,7 @@ then create a message to be inserted in the commitlog</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5147">line 5147</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5456">line 5456</a>
     </li></ul></dd>
     
 
@@ -3521,6 +3616,8 @@ then create a message to be inserted in the commitlog</p>
 
     
 </dl>
+
+
 
 
 
@@ -3885,7 +3982,7 @@ then create a message to be inserted in the commitlog</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6807">line 6807</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7214">line 7214</a>
     </li></ul></dd>
     
 
@@ -3895,6 +3992,8 @@ then create a message to be inserted in the commitlog</p>
 
     
 </dl>
+
+
 
 
 
@@ -3989,7 +4088,7 @@ then create a message to be inserted in the commitlog</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6875">line 6875</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7282">line 7282</a>
     </li></ul></dd>
     
 
@@ -3999,6 +4098,8 @@ then create a message to be inserted in the commitlog</p>
 
     
 </dl>
+
+
 
 
 
@@ -4071,7 +4172,7 @@ then create a message to be inserted in the commitlog</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6959">line 6959</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7366">line 7366</a>
     </li></ul></dd>
     
 
@@ -4081,6 +4182,8 @@ then create a message to be inserted in the commitlog</p>
 
     
 </dl>
+
+
 
 
 
@@ -4207,7 +4310,7 @@ for more complex queries use <a href="Collection.html#chain">chain()</a> or <a h
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6682">line 6682</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7086">line 7086</a>
     </li></ul></dd>
     
 
@@ -4217,6 +4320,8 @@ for more complex queries use <a href="Collection.html#chain">chain()</a> or <a h
 
     
 </dl>
+
+
 
 
 
@@ -4369,7 +4474,7 @@ for more complex queries use <a href="Collection.html#chain">chain()</a> or <a h
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5518">line 5518</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5847">line 5847</a>
     </li></ul></dd>
     
 
@@ -4379,6 +4484,8 @@ for more complex queries use <a href="Collection.html#chain">chain()</a> or <a h
 
     
 </dl>
+
+
 
 
 
@@ -4531,7 +4638,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5503">line 5503</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5832">line 5832</a>
     </li></ul></dd>
     
 
@@ -4541,6 +4648,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -4666,7 +4775,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6638">line 6638</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7042">line 7042</a>
     </li></ul></dd>
     
 
@@ -4676,6 +4785,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -4849,7 +4960,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6117">line 6117</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6514">line 6514</a>
     </li></ul></dd>
     
 
@@ -4872,12 +4983,14 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
 
 
+
+
 <h5>Returns:</h5>
 
         
 <div class="param-desc">
     <p>Object reference if document was found, null if not,
-    or an array if 'returnPosition' was passed.</p>
+or an array if 'returnPosition' was passed.</p>
 </div>
 
 
@@ -5013,7 +5126,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5485">line 5485</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5814">line 5814</a>
     </li></ul></dd>
     
 
@@ -5023,6 +5136,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -5121,7 +5236,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6823">line 6823</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7230">line 7230</a>
     </li></ul></dd>
     
 
@@ -5131,6 +5246,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -5256,7 +5373,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5027">line 5027</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5336">line 5336</a>
     </li></ul></dd>
     
 
@@ -5284,13 +5401,15 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
 
 
+
+
         
             
 
     
 
     
-    <h4 class="name" id="insert"><span class="type-signature"></span>insert<span class="signature">(doc)</span><span class="type-signature"> &rarr; {object|array}</span></h4>
+    <h4 class="name" id="insert"><span class="type-signature"></span>insert<span class="signature">(doc, overrideAdaptiveIndices<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object|array}</span></h4>
     
 
     
@@ -5322,6 +5441,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -5350,10 +5471,53 @@ For filter function querying you should migrate to <a href="Collection.html#upda
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
             <td class="description last"><p>the document (or array of documents) to be inserted</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>overrideAdaptiveIndices</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>(optional) if <code>true</code>, adaptive indicies will be
+temporarily disabled and then fully rebuilt after batch. This will be faster for
+large inserts, but slower for small/medium inserts in large collections</p></td>
         </tr>
 
     
@@ -5394,7 +5558,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5537">line 5537</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5869">line 5869</a>
     </li></ul></dd>
     
 
@@ -5404,6 +5568,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -5448,7 +5614,14 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>users.insert({    name: 'Odin',    age: 50,    address: 'Asgard'});// alternatively, insert array of documentsusers.insert([{ name: 'Thor', age: 35}, { name: 'Loki', age: 30}]);</code></pre>
+    <pre class="prettyprint"><code>users.insert({
+    name: 'Odin',
+    age: 50,
+    address: 'Asgard'
+});
+
+// alternatively, insert array of documents
+users.insert([{ name: 'Thor', age: 35}, { name: 'Loki', age: 30}]);</code></pre>
 
 
 
@@ -5582,7 +5755,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6785">line 6785</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7192">line 7192</a>
     </li></ul></dd>
     
 
@@ -5592,6 +5765,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -5686,7 +5861,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6889">line 6889</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7296">line 7296</a>
     </li></ul></dd>
     
 
@@ -5696,6 +5871,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -5768,7 +5945,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6903">line 6903</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7310">line 7310</a>
     </li></ul></dd>
     
 
@@ -5778,6 +5955,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -5899,7 +6078,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7018">line 7018</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7425">line 7425</a>
     </li></ul></dd>
     
 
@@ -5909,6 +6088,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -5981,7 +6162,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6896">line 6896</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7303">line 7303</a>
     </li></ul></dd>
     
 
@@ -5991,6 +6172,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -6063,7 +6246,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6931">line 6931</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7338">line 7338</a>
     </li></ul></dd>
     
 
@@ -6073,6 +6256,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -6194,7 +6379,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6989">line 6989</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7396">line 7396</a>
     </li></ul></dd>
     
 
@@ -6204,6 +6389,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -6329,7 +6516,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6039">line 6039</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6420">line 6420</a>
     </li></ul></dd>
     
 
@@ -6339,6 +6526,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -6464,7 +6653,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5471">line 5471</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5803">line 5803</a>
     </li></ul></dd>
     
 
@@ -6474,6 +6663,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -6599,7 +6790,7 @@ For filter function querying you should migrate to <a href="Collection.html#upda
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5046">line 5046</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5355">line 5355</a>
     </li></ul></dd>
     
 
@@ -6609,6 +6800,8 @@ For filter function querying you should migrate to <a href="Collection.html#upda
 
     
 </dl>
+
+
 
 
 
@@ -6738,7 +6931,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5903">line 5903</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6261">line 6261</a>
     </li></ul></dd>
     
 
@@ -6748,6 +6941,8 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     
 </dl>
+
+
 
 
 
@@ -6896,7 +7091,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5037">line 5037</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5346">line 5346</a>
     </li></ul></dd>
     
 
@@ -6906,6 +7101,8 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     
 </dl>
+
+
 
 
 
@@ -7054,7 +7251,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5097">line 5097</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5406">line 5406</a>
     </li></ul></dd>
     
 
@@ -7064,6 +7261,8 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     
 </dl>
+
+
 
 
 
@@ -7140,7 +7339,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6838">line 6838</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7245">line 7245</a>
     </li></ul></dd>
     
 
@@ -7150,6 +7349,8 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     
 </dl>
+
+
 
 
 
@@ -7275,7 +7476,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6981">line 6981</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7388">line 7388</a>
     </li></ul></dd>
     
 
@@ -7285,6 +7486,8 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     
 </dl>
+
+
 
 
 
@@ -7410,7 +7613,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5680">line 5680</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6028">line 6028</a>
     </li></ul></dd>
     
 
@@ -7420,6 +7623,8 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     
 </dl>
+
+
 
 
 
@@ -7568,7 +7773,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line5881">line 5881</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6239">line 6239</a>
     </li></ul></dd>
     
 
@@ -7578,6 +7783,8 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     
 </dl>
+
+
 
 
 
@@ -7703,7 +7910,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line6773">line 6773</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line7180">line 7180</a>
     </li></ul></dd>
     
 
@@ -7713,6 +7920,8 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     
 </dl>
+
+
 
 
 
@@ -7754,7 +7963,9 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var results = coll.where(function(obj) {  return obj.legs === 8;});</code></pre>
+    <pre class="prettyprint"><code>var results = coll.where(function(obj) {
+  return obj.legs === 8;
+});</code></pre>
 
 
 
@@ -7780,7 +7991,7 @@ For 'mongo-like' querying you should migrate to <a href="Collection.html#findAnd
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 10 2018 03:42:33 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Aug 15 2022 19:46:54 GMT+0800 (中国标准时间)
 </footer>
 
 <script> prettyPrint(); </script>

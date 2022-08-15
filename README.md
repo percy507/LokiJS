@@ -1,4 +1,22 @@
-# LokiJS
+# @percy507/lokijs
+
+## Installation
+
+```bash
+npm i @percy507/lokijs
+```
+
+## Modified
+
+## TODO
+
+- Switch `Object.observe` to `Proxy`, see https://github.com/techfort/LokiJS/pull/780 (after testing, this PR seems not work correctly)
+
+---
+
+Below is the original README.
+
+## LokiJS
 
 The super fast in-memory javascript document oriented database.
 
@@ -14,7 +32,7 @@ Enable offline-syncing to your SQL/NoSQL database servers with [SyncProxy](https
 LokiJS is a document oriented database written in javascript, published under MIT License.
 Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism.
 Runs in node (including cordova/phonegap and node-webkit),  [nativescript](http://www.nativescript.org) and the browser.
-LokiJS is ideal for the following scenarios: 
+LokiJS is ideal for the following scenarios:
 
 1. client-side in-memory db is ideal (e.g., a session store)
 2. performance critical applications
@@ -50,7 +68,7 @@ LokiJS is at version 1.3 [Eostre].
 
 As LokiJS is written in JavaScript it can be run on any environment supporting JavaScript such as browsers, node.js/node-webkit, nativescript mobile framework and hybrid mobile apps (such as phonegap/cordova).
 
-Made by [@techfort](http://twitter.com/tech_fort), with the precious help of Dave Easterday. 
+Made by [@techfort](http://twitter.com/tech_fort), with the precious help of Dave Easterday.
 
 _[Leave a tip](https://gratipay.com/techfort/) or give us a star if you find LokiJS useful!_
 

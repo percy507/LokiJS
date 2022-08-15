@@ -28,62 +28,100 @@
 </header>
 
 <article>
-    <h1>Lokiwork, the LokiJS Angular Service</h1><h2>Overview</h2><p>This service of Lokijs for Angular simplifies things to the most basic level because i found Loki difficult to work with in a mobile environment.  all you do is setup json files that specify the layout of your data then add, and update entries to the databases.</p>
+    <h1>Lokiwork, the LokiJS Angular Service</h1>
+<h2>Overview</h2>
+<p>This service of Lokijs for Angular simplifies things to the most basic level because i found Loki difficult to work with in a mobile environment.  all you do is setup json files that specify the layout of your data then add, and update entries to the databases.</p>
 <p>###Install:
 <code>bower install lokijs</code></p>
 <p>###Html:</p>
 <pre class="prettyprint source"><code>&lt;script src=&quot;bower_components/lokijs/src/lokijs.js&quot;>&lt;/script>
-&lt;script src=&quot;bower_components/lokijs/src/loki-angular.js&quot;>&lt;/script></code></pre><p>###App:
+&lt;script src=&quot;bower_components/lokijs/src/loki-angular.js&quot;>&lt;/script>
+</code></pre>
+<p>###App:
 <code>angular.module('app',['lokijs']);</code></p>
 <p>###Configure database template:
-I might call this file -&gt; <code>json_locations.js</code> Note: each one has to be called, json1, json2, json3, etc as shown in the following: </p>
+I might call this file -&gt; <code>json_locations.js</code> Note: each one has to be called, json1, json2, json3, etc as shown in the following:</p>
 <pre class="prettyprint source"><code>app.constant(
-    'json1', 
-    {  
-           &quot;db&quot;:&quot;settings&quot;,
-           &quot;collection&quot;: &quot;globals&quot; ,
-           &quot;documents&quot; :
-            [  
-                      {
-                    &quot;name&quot;: &quot;user settings&quot;,
-                    &quot;brands&quot; : true,
-                    &quot;random&quot; : &quot;some value&quot;
-                      }
-            ]
-    }
-    );</code></pre><p>###Controller:</p>
-<pre class="prettyprint source"><code>app.controller('myCtrl', function($scope, Lokiwork){...});</code></pre><p>###Usage:</p>
+	'json1', 
+	{  
+   		&quot;db&quot;:&quot;settings&quot;,
+   		&quot;collection&quot;: &quot;globals&quot; ,
+		   &quot;documents&quot; :
+			[  
+   		   		{
+					&quot;name&quot;: &quot;user settings&quot;,
+					&quot;brands&quot; : true,
+					&quot;random&quot; : &quot;some value&quot;
+   		   		}
+			]
+	}
+	);
+</code></pre>
+<p>###Controller:</p>
+<pre class="prettyprint source"><code>app.controller('myCtrl', function($scope, Lokiwork){...});
+</code></pre>
+<p>###Usage:</p>
 <p>Lokiwork.setCurrentDoc(dbname, collection, document_identifier);</p>
-<pre class="prettyprint source"><code>Lokiwork.setCurrentDoc('settings', 'globals', {'name': &quot;user settings&quot;});</code></pre><p>Lokiwork.getCurrentDoc();</p>
-<pre class="prettyprint source"><code>Lokiwork.getCurrentDoc();</code></pre><p>Lokiwork.updateCurrentDoc(name, value);</p>
-<pre class="prettyprint source"><code>Lokiwork.updateCurrentDoc(&quot;power&quot;, true);</code></pre><p>Lokiwork.deleteCurrentDoc();</p>
-<pre class="prettyprint source"><code>Lokiwork.deleteCurrentDoc();</code></pre><p>Lokiwork.getDoc(dbName, collName, docName);</p>
-<pre class="prettyprint source"><code>Lokiwork.getDoc(&quot;settings&quot;, &quot;globals&quot;, {name:&quot;user settings&quot;});</code></pre><p>Lokiwork.addDocument(dbName, collName, newDoc);</p>
-<pre class="prettyprint source"><code>Lokiwork.addDocument(&quot;settings&quot;, &quot;globals&quot;, doc_obj); //example below</code></pre><p>Lokiwork.updateDoc(dbname, collName, document_identifier, name, value);</p>
-<pre class="prettyprint source"><code>Lokiwork.updateDoc(&quot;settings&quot;, &quot;globals&quot;, {name:&quot;user settings&quot;}, &quot;brands&quot;, false});</code></pre><p>Lokiwork.deleteDocument(dbName, collName, document_identifier);</p>
-<pre class="prettyprint source"><code>Lokiwork.deleteDocument('settings','globals', {name:'user settings'});</code></pre><p>Lokiwork.getCollection(dbName, collName);</p>
-<pre class="prettyprint source"><code>Lokiwork.getCollection('settings', 'globals');</code></pre><p>Lokwork.addCollection(json_obj);</p>
-<pre class="prettyprint source"><code>Lokiwork.addCollection(item); // example below</code></pre><p>Lokiwork.deleteCollection(dbName, collName);</p>
-<pre class="prettyprint source"><code>Lokiwork.deleteCollection('settings', globals');</code></pre><p>Lokiwork.deleteDatabase(dbName);</p>
-<pre class="prettyprint source"><code>Lokiwork.deleteDatabase(&quot;settings&quot;);</code></pre><p>####Further examples:</p>
+<pre><code>Lokiwork.setCurrentDoc('settings', 'globals', {'name': &quot;user settings&quot;});
+</code></pre>
+<p>Lokiwork.getCurrentDoc();</p>
+<pre><code>Lokiwork.getCurrentDoc();
+</code></pre>
+<p>Lokiwork.updateCurrentDoc(name, value);</p>
+<pre><code>Lokiwork.updateCurrentDoc(&quot;power&quot;, true);
+</code></pre>
+<p>Lokiwork.deleteCurrentDoc();</p>
+<pre><code>Lokiwork.deleteCurrentDoc();
+</code></pre>
+<p>Lokiwork.getDoc(dbName, collName, docName);</p>
+<pre><code>Lokiwork.getDoc(&quot;settings&quot;, &quot;globals&quot;, {name:&quot;user settings&quot;});
+</code></pre>
+<p>Lokiwork.addDocument(dbName, collName, newDoc);</p>
+<pre><code>Lokiwork.addDocument(&quot;settings&quot;, &quot;globals&quot;, doc_obj); //example below
+</code></pre>
+<p>Lokiwork.updateDoc(dbname, collName, document_identifier, name, value);</p>
+<pre><code>Lokiwork.updateDoc(&quot;settings&quot;, &quot;globals&quot;, {name:&quot;user settings&quot;}, &quot;brands&quot;, false});
+</code></pre>
+<p>Lokiwork.deleteDocument(dbName, collName, document_identifier);</p>
+<pre><code>Lokiwork.deleteDocument('settings','globals', {name:'user settings'});
+</code></pre>
+<p>Lokiwork.getCollection(dbName, collName);</p>
+<pre><code>Lokiwork.getCollection('settings', 'globals');
+</code></pre>
+<p>Lokwork.addCollection(json_obj);</p>
+<pre><code>Lokiwork.addCollection(item); // example below
+</code></pre>
+<p>Lokiwork.deleteCollection(dbName, collName);</p>
+<pre><code>Lokiwork.deleteCollection('settings', globals');
+</code></pre>
+<p>Lokiwork.deleteDatabase(dbName);</p>
+<pre><code>Lokiwork.deleteDatabase(&quot;settings&quot;);
+</code></pre>
+<p>####Further examples:</p>
 <pre class="prettyprint source"><code>var collection = {  
-  &quot;db&quot;:&quot;settings&quot;,
-  &quot;collection&quot;: &quot;globals&quot; ,
-  &quot;documents&quot; :
-  [  
-       {
-      &quot;name&quot;: &quot;user settings&quot;,
-      &quot;brands&quot; : true,
-      &quot;face&quot; : &quot;You now it&quot;
-       }
-  ]
+&quot;db&quot;:&quot;settings&quot;,
+&quot;collection&quot;: &quot;globals&quot; ,
+&quot;documents&quot; :
+[  
+ 	{
+    &quot;name&quot;: &quot;user settings&quot;,
+    &quot;brands&quot; : true,
+    &quot;face&quot; : &quot;You now it&quot;
+ 	}
+]
 };
-   Lokiwork.addCollection(collection);</code></pre><p>With addDocument, you can pass a json document in if it's small enough, otherwise assign it to a variable first.</p>
-<pre class="prettyprint source"><code>Lokiwork.addDocument(&quot;settings&quot;, &quot;globals&quot;, {name:&quot;user settings2&quot;, gay: true, brands:false})</code></pre><p>You can also use promises and/or chain them:</p>
+ Lokiwork.addCollection(collection);
+</code></pre>
+<p>With addDocument, you can pass a json document in if it's small enough, otherwise assign it to a variable first.</p>
+<pre class="prettyprint source"><code>Lokiwork.addDocument(&quot;settings&quot;, &quot;globals&quot;, {name:&quot;user settings2&quot;, gay: true, brands:false})
+</code></pre>
+<p>You can also use promises and/or chain them:</p>
 <pre class="prettyprint source"><code>Lokiwork.setCurrentDoc('settings', 'globals', {'name': &quot;user settings&quot;})
     .then(function(data){               
        Lokiwork.updateCurrentDoc(&quot;address&quot;, &quot;1801 Waters Ridge Drive&quot;);
-    });</code></pre><p>###Remember!
+    });
+</code></pre>
+<p>###Remember!
 A lot of the above commands may not be necessary if you are implementing a static change, just edit the underlying json javascript file, delete the local storage file, and restart the app.</p>
 <p>###Notes:</p>
 <ul>
@@ -105,7 +143,7 @@ A lot of the above commands may not be necessary if you are implementing a stati
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 10 2018 03:42:33 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Aug 15 2022 19:46:54 GMT+0800 (中国标准时间)
 </footer>
 
 <script> prettyPrint(); </script>

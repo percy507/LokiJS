@@ -1,15 +1,16 @@
 {
-  "name": "lokijs",
-  "version": "1.5.12",
-  "description": "Fast document oriented javascript in-memory database",
-  "homepage": "https://techfort.github.io/LokiJS/",
+  "name": "@percy507/lokijs",
+  "version": "1.6.0",
+  "description": "A fork of LokiJS project. Fast document oriented javascript in-memory database",
+  "homepage": "https://percy507-lokijs.vercel.app",
   "main": "src/lokijs.js",
+  "types": "index.d.ts",
   "directories": {
     "example": "examples"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/techfort/LokiJS.git"
+    "url": "https://github.com/percy507/LokiJS"
   },
   "keywords": [
     "javascript",
@@ -34,7 +35,7 @@
     "prepublish": "npm run build",
     "clean": "rimraf build/* coverage/* node_modules",
     "pour:beer": "echo New npm version published, one beer for you !",
-    "jsdoc": "./node_modules/.bin/jsdoc -c jsdoc-conf.json",
+    "jsdoc": "./node_modules/.bin/jsdoc -c docs-conf.json",
     "benchmark": "node benchmark/benchmark"
   },
   "author": "Joe Minichino <joe.minichino@gmail.com>",
@@ -46,9 +47,8 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/techfort/LokiJS/issues"
+    "url": "https://github.com/percy507/LokiJS/issues"
   },
-  "dependencies": {},
   "devDependencies": {
     "istanbul": "^0.4.4",
     "jasmine": "^2.4.1",
@@ -57,7 +57,7 @@
     "karma": "^1.1.2",
     "karma-cli": "^1.0.1",
     "karma-coverage": "^1.1.1",
-    "karma-jasmine": "^1.0.2",
+    "karma-jasmine": "^1.1.2",
     "karma-phantomjs-launcher": "^1.0.1",
     "mocha": "^2.5.3",
     "phantomjs": "^1.9.20",

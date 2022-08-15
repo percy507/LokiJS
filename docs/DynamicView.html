@@ -50,8 +50,8 @@
 
 <div class="description">
     <p>DynamicView class is a versatile 'live' view class which can have filters and sorts applied.
-   Collection.addDynamicView(name) instantiates this DynamicView object and notifies it
-   whenever documents are add/updated/removed so it can remain up-to-date. (chainable)</p>
+Collection.addDynamicView(name) instantiates this DynamicView object and notifies it
+whenever documents are add/updated/removed so it can remain up-to-date. (chainable)</p>
 </div>
 
 
@@ -368,7 +368,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3864">line 3864</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4096">line 4096</a>
     </li></ul></dd>
     
 
@@ -402,9 +402,14 @@
 
 
 
+
+
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var mydv = mycollection.addDynamicView('test');  // default is non-persistentmydv.applyFind({ 'doors' : 4 });mydv.applyWhere(function(obj) { return obj.name === 'Toyota'; });var results = mydv.data();</code></pre>
+    <pre class="prettyprint"><code>var mydv = mycollection.addDynamicView('test');  // default is non-persistent
+mydv.applyFind({ 'doors' : 4 });
+mydv.applyWhere(function(obj) { return obj.name === 'Toyota'; });
+var results = mydv.data();</code></pre>
 
 
 
@@ -495,7 +500,7 @@
             
 
             <td class="description last"><p>A filter object to add to the pipeline.
-   The object is in the format { 'type': filter_type, 'val', filter_param, 'uid', optional_filter_id }</p></td>
+The object is in the format { 'type': filter_type, 'val', filter_param, 'uid', optional_filter_id }</p></td>
         </tr>
 
     
@@ -536,7 +541,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4267">line 4267</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4549">line 4549</a>
     </li></ul></dd>
     
 
@@ -546,6 +551,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -739,7 +746,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4299">line 4299</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4590">line 4590</a>
     </li></ul></dd>
     
 
@@ -749,6 +756,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1108,7 +1117,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4124">line 4124</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4385">line 4385</a>
     </li></ul></dd>
     
 
@@ -1118,6 +1127,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1270,7 +1281,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4100">line 4100</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4360">line 4360</a>
     </li></ul></dd>
     
 
@@ -1280,6 +1291,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1321,7 +1334,11 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>dv.applySort(function(obj1, obj2) {  if (obj1.name === obj2.name) return 0;  if (obj1.name > obj2.name) return 1;  if (obj1.name &lt; obj2.name) return -1;});</code></pre>
+    <pre class="prettyprint"><code>dv.applySort(function(obj1, obj2) {
+  if (obj1.name === obj2.name) return 0;
+  if (obj1.name > obj2.name) return 1;
+  if (obj1.name &lt; obj2.name) return -1;
+});</code></pre>
 
 
 
@@ -1432,7 +1449,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4148">line 4148</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4413">line 4413</a>
     </li></ul></dd>
     
 
@@ -1442,6 +1459,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1483,7 +1502,12 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// to sort by age and then name (both ascending)dv.applySortCriteria(['age', 'name']);// to sort by age (ascending) and then by name (descending)dv.applySortCriteria(['age', ['name', true]);// to sort by age (descending) and then by name (descending)dv.applySortCriteria(['age', true], ['name', true]);</code></pre>
+    <pre class="prettyprint"><code>// to sort by age and then name (both ascending)
+dv.applySortCriteria(['age', 'name']);
+// to sort by age (ascending) and then by name (descending)
+dv.applySortCriteria(['age', ['name', true]);
+// to sort by age (descending) and then by name (descending)
+dv.applySortCriteria(['age', true], ['name', true]);</code></pre>
 
 
 
@@ -1640,7 +1664,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4316">line 4316</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4607">line 4607</a>
     </li></ul></dd>
     
 
@@ -1650,6 +1674,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1705,8 +1731,8 @@
 
 <div class="description">
     <p>branchResultset() - Makes a copy of the internal resultset for branched queries.
-   Unlike this dynamic view, the branched resultset will not be 'live' updated,
-   so your branched query should be immediately resolved and not held for future evaluation.</p>
+Unlike this dynamic view, the branched resultset will not be 'live' updated,
+so your branched query should be immediately resolved and not held for future evaluation.</p>
 </div>
 
 
@@ -1845,7 +1871,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4023">line 4023</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4275">line 4275</a>
     </li></ul></dd>
     
 
@@ -1855,6 +1881,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1896,7 +1924,24 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var db = new loki('test');var coll = db.addCollection('mydocs');var dv = coll.addDynamicView('myview');var tx = [  {    type: 'offset',    value: '[%lktxp]pageStart'  },  {    type: 'limit',    value: '[%lktxp]pageSize'  }];coll.addTransform('viewPaging', tx);// add some recordsvar results = dv.branchResultset('viewPaging', { pageStart: 10, pageSize: 10 }).data();     </code></pre>
+    <pre class="prettyprint"><code>var db = new loki('test');
+var coll = db.addCollection('mydocs');
+var dv = coll.addDynamicView('myview');
+var tx = [
+  {
+    type: 'offset',
+    value: '[%lktxp]pageStart'
+  },
+  {
+    type: 'limit',
+    value: '[%lktxp]pageSize'
+  }
+];
+coll.addTransform('viewPaging', tx);
+
+// add some records
+
+var results = dv.branchResultset('viewPaging', { pageStart: 10, pageSize: 10 }).data();</code></pre>
 
 
 
@@ -1958,7 +2003,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4349">line 4349</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4646">line 4646</a>
     </li></ul></dd>
     
 
@@ -1968,6 +2013,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -2129,7 +2176,7 @@
             
 
             <td class="description last"><p>Allows forcing the return of cloned objects even when
-       the collection is not configured for clone object.</p></td>
+the collection is not configured for clone object.</p></td>
         </tr>
 
     
@@ -2153,7 +2200,7 @@
             
 
             <td class="description last"><p>Allows overriding the default or collection specified cloning method.
-       Possible values include 'parse-stringify', 'jquery-extend-deep', 'shallow', 'shallow-assign'</p></td>
+Possible values include 'parse-stringify', 'jquery-extend-deep', 'shallow', 'shallow-assign'</p></td>
         </tr>
 
     
@@ -2224,7 +2271,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4372">line 4372</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4669">line 4669</a>
     </li></ul></dd>
     
 
@@ -2234,6 +2281,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -2404,7 +2453,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4645">line 4645</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4942">line 4942</a>
     </li></ul></dd>
     
 
@@ -2414,6 +2463,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -2457,9 +2508,9 @@
 
 <div class="description">
     <p>rematerialize() - internally used immediately after deserialization (loading)
-   This will clear out and reapply filterPipeline ops, recreating the view.
-   Since where filters do not persist correctly, this method allows
-   restoring the view to state where user can re-apply those where filters.</p>
+This will clear out and reapply filterPipeline ops, recreating the view.
+Since where filters do not persist correctly, this method allows
+restoring the view to state where user can re-apply those where filters.</p>
 </div>
 
 
@@ -2564,7 +2615,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3944">line 3944</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4190">line 4190</a>
     </li></ul></dd>
     
 
@@ -2583,6 +2634,8 @@
 <ul>
     <li>DynamicView.event:rebuild</li>
 </ul>
+
+
 
 
 
@@ -2729,7 +2782,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4332">line 4332</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4623">line 4623</a>
     </li></ul></dd>
     
 
@@ -2739,6 +2792,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -2794,7 +2849,7 @@
 
 <div class="description">
     <p>removeFilters() - Used to clear pipeline and reset dynamic view to initial state.
-    Existing options should be retained.</p>
+Existing options should be retained.</p>
 </div>
 
 
@@ -2960,7 +3015,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4062">line 4062</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4313">line 4313</a>
     </li></ul></dd>
     
 
@@ -2970,6 +3025,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -3010,7 +3067,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 10 2018 03:42:33 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Aug 15 2022 19:46:54 GMT+0800 (中国标准时间)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -50,7 +50,7 @@
 
 <div class="description">
     <p>Resultset class allowing chainable queries.  Intended to be instanced internally.
-   Collection.find(), Collection.where(), and Collection.chain() instantiate this.</p>
+Collection.find(), Collection.where(), and Collection.chain() instantiate this.</p>
 </div>
 
 
@@ -143,7 +143,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line2758">line 2758</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line2956">line 2956</a>
     </li></ul></dd>
     
 
@@ -170,9 +170,14 @@
 
 
 
+
+
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>mycollection.chain()     .find({ 'doors' : 4 })     .where(function(obj) { return obj.name === 'Toyota' })     .data();</code></pre>
+    <pre class="prettyprint"><code>mycollection.chain()
+     .find({ 'doors' : 4 })
+     .where(function(obj) { return obj.name === 'Toyota' })
+     .data();</code></pre>
 
 
 
@@ -240,7 +245,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line2869">line 2869</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3067">line 3067</a>
     </li></ul></dd>
     
 
@@ -369,7 +374,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3139">line 3139</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3337">line 3337</a>
     </li></ul></dd>
     
 
@@ -379,6 +384,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -420,7 +427,10 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// to sort by age and then name (both ascending)rs.compoundsort(['age', 'name']);// to sort by age (ascending) and then by name (descending)rs.compoundsort(['age', ['name', true]);</code></pre>
+    <pre class="prettyprint"><code>// to sort by age and then name (both ascending)
+rs.compoundsort(['age', 'name']);
+// to sort by age (ascending) and then by name (descending)
+rs.compoundsort(['age', ['name', true]]);</code></pre>
 
 
 
@@ -482,7 +492,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line2854">line 2854</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3052">line 3052</a>
     </li></ul></dd>
     
 
@@ -492,6 +502,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -590,7 +602,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3541">line 3541</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3773">line 3773</a>
     </li></ul></dd>
     
 
@@ -600,6 +612,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -766,7 +780,7 @@
             
 
             <td class="description last"><p>Allows forcing the return of cloned objects even when
-       the collection is not configured for clone object.</p></td>
+the collection is not configured for clone object.</p></td>
         </tr>
 
     
@@ -790,7 +804,7 @@
             
 
             <td class="description last"><p>Allows overriding the default or collection specified cloning method.
-       Possible values include 'parse-stringify', 'jquery-extend-deep', 'shallow', 'shallow-assign'</p></td>
+Possible values include 'parse-stringify', 'jquery-extend-deep', 'shallow', 'shallow-assign'</p></td>
         </tr>
 
     
@@ -861,7 +875,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3563">line 3563</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3795">line 3795</a>
     </li></ul></dd>
     
 
@@ -871,6 +885,8 @@
 
     
 </dl>
+
+
 
 
 
@@ -1269,7 +1285,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3777">line 3777</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4009">line 4009</a>
     </li></ul></dd>
     
 
@@ -1279,6 +1295,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -1320,7 +1338,39 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var db = new loki('sandbox.db');var products = db.addCollection('products');var orders = db.addCollection('orders');products.insert({ productId: "100234", name: "flywheel energy storage", unitCost: 19999.99 });products.insert({ productId: "140491", name: "300F super capacitor", unitCost: 129.99 });products.insert({ productId: "271941", name: "fuel cell", unitCost: 3999.99 });products.insert({ productId: "174592", name: "390V 3AH lithium bank", unitCost: 4999.99 });orders.insert({ orderDate : new Date("12/1/2017").getTime(), prodId: "174592", qty: 2, customerId: 2 });orders.insert({ orderDate : new Date("4/15/2016").getTime(), prodId: "271941", qty: 1, customerId: 1 });orders.insert({ orderDate : new Date("3/12/2017").getTime(), prodId: "140491", qty: 4, customerId: 4 });orders.insert({ orderDate : new Date("7/31/2017").getTime(), prodId: "100234", qty: 7, customerId: 3 });orders.insert({ orderDate : new Date("8/3/2016").getTime(), prodId: "174592", qty: 3, customerId: 5 });var mapfun = function(left, right) {  return {    orderId: left.$loki,    orderDate: new Date(left.orderDate) + '',    customerId: left.customerId,    qty: left.qty,    productId: left.prodId,    prodName: right.name,    prodCost: right.unitCost,    orderTotal: +((right.unitCost * left.qty).toFixed(2))  };};// join orders with relevant product info via eqJoinvar orderSummary = orders.chain().eqJoin(products, "prodId", "productId", mapfun).data();console.log(orderSummary);     </code></pre>
+    <pre class="prettyprint"><code>var db = new loki('sandbox.db');
+
+var products = db.addCollection('products');
+var orders = db.addCollection('orders');
+
+products.insert({ productId: "100234", name: "flywheel energy storage", unitCost: 19999.99 });
+products.insert({ productId: "140491", name: "300F super capacitor", unitCost: 129.99 });
+products.insert({ productId: "271941", name: "fuel cell", unitCost: 3999.99 });
+products.insert({ productId: "174592", name: "390V 3AH lithium bank", unitCost: 4999.99 });
+
+orders.insert({ orderDate : new Date("12/1/2017").getTime(), prodId: "174592", qty: 2, customerId: 2 });
+orders.insert({ orderDate : new Date("4/15/2016").getTime(), prodId: "271941", qty: 1, customerId: 1 });
+orders.insert({ orderDate : new Date("3/12/2017").getTime(), prodId: "140491", qty: 4, customerId: 4 });
+orders.insert({ orderDate : new Date("7/31/2017").getTime(), prodId: "100234", qty: 7, customerId: 3 });
+orders.insert({ orderDate : new Date("8/3/2016").getTime(), prodId: "174592", qty: 3, customerId: 5 });
+
+var mapfun = function(left, right) {
+  return {
+    orderId: left.$loki,
+    orderDate: new Date(left.orderDate) + '',
+    customerId: left.customerId,
+    qty: left.qty,
+    productId: left.prodId,
+    prodName: right.name,
+    prodCost: right.unitCost,
+    orderTotal: +((right.unitCost * left.qty).toFixed(2))
+  };
+};
+
+// join orders with relevant product info via eqJoin
+var orderSummary = orders.chain().eqJoin(products, "prodId", "productId", mapfun).data();
+
+console.log(orderSummary);</code></pre>
 
 
 
@@ -1474,7 +1524,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3256">line 3256</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3471">line 3471</a>
     </li></ul></dd>
     
 
@@ -1484,6 +1534,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -1774,7 +1826,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3853">line 3853</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line4085">line 4085</a>
     </li></ul></dd>
     
 
@@ -1801,9 +1853,17 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
 
 
+
+
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var orders.chain().find({ productId: 32 }).map(function(obj) {  return {    orderId: $loki,    productId: productId,    quantity: qty  };});</code></pre>
+    <pre class="prettyprint"><code>var orders.chain().find({ productId: 32 }).map(function(obj) {
+  return {
+    orderId: $loki,
+    productId: productId,
+    quantity: qty
+  };
+});</code></pre>
 
 
 
@@ -1937,7 +1997,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3721">line 3721</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3953">line 3953</a>
     </li></ul></dd>
     
 
@@ -1947,6 +2007,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -1988,7 +2050,18 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var db = new loki("order.db");var orders = db.addCollection("orders");orders.insert([{ qty: 4, unitCost: 100.00 }, { qty: 10, unitCost: 999.99 }, { qty: 2, unitCost: 49.99 }]);function mapfun (obj) { return obj.qty*obj.unitCost };function reducefun(array) {  var grandTotal=0;  array.forEach(function(orderTotal) { grandTotal += orderTotal; });  return grandTotal;}var grandOrderTotal = orders.chain().mapReduce(mapfun, reducefun);console.log(grandOrderTotal);</code></pre>
+    <pre class="prettyprint"><code>var db = new loki("order.db");
+var orders = db.addCollection("orders");
+orders.insert([{ qty: 4, unitCost: 100.00 }, { qty: 10, unitCost: 999.99 }, { qty: 2, unitCost: 49.99 }]);
+
+function mapfun (obj) { return obj.qty*obj.unitCost };
+function reducefun(array) {
+  var grandTotal=0;
+  array.forEach(function(orderTotal) { grandTotal += orderTotal; });
+  return grandTotal;
+}
+var grandOrderTotal = orders.chain().mapReduce(mapfun, reducefun);
+console.log(grandOrderTotal);</code></pre>
 
 
 
@@ -2050,7 +2123,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3686">line 3686</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3918">line 3918</a>
     </li></ul></dd>
     
 
@@ -2060,6 +2133,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -2101,7 +2176,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// remove users inactive since 1/1/2001users.chain().find({ lastActive: { $lte: new Date("1/1/2001").getTime() } }).remove();</code></pre>
+    <pre class="prettyprint"><code>// remove users inactive since 1/1/2001
+users.chain().find({ lastActive: { $lte: new Date("1/1/2001").getTime() } }).remove();</code></pre>
 
 
 
@@ -2120,7 +2196,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
 <div class="description">
     <p>Simpler, loose evaluation for user to sort based on a property name. (chainable).
-   Sorting based on the same lt/gt helper functions used for binary indices.</p>
+Sorting based on the same lt/gt helper functions used for binary indices.</p>
 </div>
 
 
@@ -2425,7 +2501,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3011">line 3011</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3209">line 3209</a>
     </li></ul></dd>
     
 
@@ -2435,6 +2511,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -2587,7 +2665,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line2978">line 2978</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3176">line 3176</a>
     </li></ul></dd>
     
 
@@ -2597,6 +2675,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -2638,7 +2718,11 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>rslt.sort(function(obj1, obj2) {     if (obj1.name === obj2.name) return 0;     if (obj1.name > obj2.name) return 1;     if (obj1.name &lt; obj2.name) return -1;   });</code></pre>
+    <pre class="prettyprint"><code>rslt.sort(function(obj1, obj2) {
+     if (obj1.name === obj2.name) return 0;
+     if (obj1.name > obj2.name) return 1;
+     if (obj1.name &lt; obj2.name) return -1;
+   });</code></pre>
 
 
 
@@ -2795,7 +2879,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line2894">line 2894</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3092">line 3092</a>
     </li></ul></dd>
     
 
@@ -2805,6 +2889,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -2846,7 +2932,20 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>users.addTransform('CountryFilter', [  {    type: 'find',    value: {      'country': { $eq: '[%lktxp]Country' }    }  },  {    type: 'simplesort',    property: 'age',    options: { desc: false}  }]);var results = users.chain().transform("CountryFilter", { Country: 'fr' }).data();</code></pre>
+    <pre class="prettyprint"><code>users.addTransform('CountryFilter', [
+  {
+    type: 'find',
+    value: {
+      'country': { $eq: '[%lktxp]Country' }
+    }
+  },
+  {
+    type: 'simplesort',
+    property: 'age',
+    options: { desc: false}
+  }
+]);
+var results = users.chain().transform("CountryFilter", { Country: 'fr' }).data();</code></pre>
 
 
 
@@ -2957,7 +3056,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3645">line 3645</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3877">line 3877</a>
     </li></ul></dd>
     
 
@@ -2967,6 +3066,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -3008,7 +3109,9 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>users.chain().find({ country: 'de' }).update(function(user) {  user.phoneFormat = "+49 AAAA BBBBBB";});</code></pre>
+    <pre class="prettyprint"><code>users.chain().find({ country: 'de' }).update(function(user) {
+  user.phoneFormat = "+49 AAAA BBBBBB";
+});</code></pre>
 
 
 
@@ -3119,7 +3222,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3489">line 3489</a>
+        <a href="lokijs.js.html">lokijs.js</a>, <a href="lokijs.js.html#line3721">line 3721</a>
     </li></ul></dd>
     
 
@@ -3129,6 +3232,8 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 
     
 </dl>
+
+
 
 
 
@@ -3196,7 +3301,7 @@ eqJoin expects the right join key values to be unique.  Otherwise left data will
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 10 2018 03:42:33 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Aug 15 2022 19:46:54 GMT+0800 (中国标准时间)
 </footer>
 
 <script> prettyPrint(); </script>
