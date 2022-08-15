@@ -6,8 +6,6 @@
 npm i @percy507/lokijs
 ```
 
-## Modified
-
 ## TODO
 
 - Switch `Object.observe` to `Proxy`, see https://github.com/techfort/LokiJS/pull/780 (after testing, this PR seems not work correctly)
