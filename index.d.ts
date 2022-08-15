@@ -285,7 +285,7 @@ declare class Loki extends LokiEventEmitter {
      * @param collectionName - name of collection to look up
      * @returns Reference to collection in database by that name, or null if not found
      */
-    public getCollection<F extends object = any>(collectionName: string): Collection<F>;
+    public getCollection<F extends object = any>(collectionName: string): Collection<F> | null;
 
     /**
      * Renames an existing loki collection
