@@ -2042,6 +2042,6 @@ declare module LokiConstructor {
     export class LokiFsAdapter extends _LokiFsAdapter { }
 }
 
-declare module "lokijs" {
+declare module "@percy507/lokijs" {
     export = LokiConstructor;
 }
