@@ -777,13 +777,13 @@
       request.onsuccess = function() {
         that.operationInProgress = false;
         DEBUG && console.timeEnd("deleteDatabase");
-        callback({ success: true });
+        callback(null, { success: true });
       };
 
       request.onerror = function(e) {
         that.operationInProgress = false;
         console.error("Error while deleting database", e);
-        callback({ success: false });
+        callback(null, { success: false });
       };
 
       request.onblocked = function(e) {
